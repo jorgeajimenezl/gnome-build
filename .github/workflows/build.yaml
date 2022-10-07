@@ -13,12 +13,12 @@ env:
   PKG_CONFIG_RELEASE: https://nirbheek.in/files/binaries/pkg-config/win32/pkg-config.exe
   WIN_FLEX_BISON_RELEASE: https://github.com/lexxmark/winflexbison/releases/download/v2.5.14/win_flex_bison-2.5.14.zip
   # libraries to build
-  GI_RELEASE: https://download.gnome.org/sources/gobject-introspection/1.72/gobject-introspection-1.72.0.tar.xz
-  GI: gobject-introspection-1.72.0
-  LIBXML2_RELEASE: https://download.gnome.org/sources/libxml2/2.9/libxml2-2.9.13.tar.xz
-  LIBXML2: libxml2-2.9.13
-  LIBRSVG_RELEASE: https://download.gnome.org/sources/librsvg/2.54/librsvg-2.54.0.tar.xz
-  LIBRSVG: librsvg-2.54.0
+  GI_RELEASE: https://download.gnome.org/sources/gobject-introspection/1.74/gobject-introspection-1.74.0.tar.xz
+  GI: gobject-introspection-1.74.0
+  LIBXML2_RELEASE: https://download.gnome.org/sources/libxml2/2.10/libxml2-2.10.2.tar.xz
+  LIBXML2: libxml2-2.10.2
+  LIBRSVG_RELEASE: https://download.gnome.org/sources/librsvg/2.54/librsvg-2.54.5.tar.xz
+  LIBRSVG: librsvg-2.54.5
 
 jobs:
   build:
@@ -27,8 +27,8 @@ jobs:
     steps:
     # tools setup: meson, pkg-config, win_flex_bison, MSVC
     # .. force meson 0.58.2 here because this is the version in gi's CI
-    - name: Setup Meson 0.58.2
-      run: pip install --upgrade meson==0.58.2 ninja
+    - name: Setup Meson
+      run: pip install --upgrade meson ninja
     - name: Setup pkg-config
       run: |
         mkdir tools
