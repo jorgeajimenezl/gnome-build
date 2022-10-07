@@ -1,5 +1,6 @@
 name: Build
-on: push
+on: 
+  workflow_dispatch:
 
 env:
   # shared paths for all builds
