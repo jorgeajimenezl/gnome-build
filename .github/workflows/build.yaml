@@ -26,10 +26,8 @@ jobs:
     name: Build GNOME Stack
     runs-on: windows-latest
     steps:
-    # tools setup: meson, pkg-config, win_flex_bison, MSVC
-    # .. force meson 0.58.2 here because this is the version in gi's CI
     - name: Setup Meson
-      run: pip install --upgrade meson==0.58.2 ninja
+      run: pip install --upgrade meson==0.60 ninja
     - name: Setup pkg-config
       run: |
         mkdir tools
